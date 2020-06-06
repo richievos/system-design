@@ -52,6 +52,7 @@ Though there's a vast variety of answers to each of those, there's likely some c
 * the client should throttle its requests. A user doesn't want a UI flapping around every time they type another letter, and a system can quickly get overloaded by N users typing M letters each triggering a search.
 * as with most APIs, you likely want this all to be _stateless_. The client may need to track some state (eg tokens for next results), but there's not much reason to use a session for tracking the API.
 * the response may want to include information about what triggered the match. Naively if you search for "mi" you could again on the client search through all fields to find "mi", but then the client is guessing at what the server did. That could be returned explicitly.
+* some sort of context is likely important for the autocomplete. It might be "what user group is someone sending the message from" or "what chat room am I in". That may be useful for prioritizing the results, or for filtering them
 
 ### Case study: Simple customer interaction design
 
